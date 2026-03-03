@@ -1,74 +1,35 @@
-# React + TypeScript + Vite
+# Zlatify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A workout companion app for **Zlat's Weighted Calisthenics Program** — a structured progression system for weighted pull-ups and weighted dips.
 
-Currently, two official plugins are available:
+## What is it?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Zlatify guides you through a multi-stage calisthenics program that takes you from novice (12 bodyweight pull-ups / 15 bodyweight dips) through advanced stages using periodized training with weighted progressions. The app handles:
 
-## React Compiler
+- **Workout logging** — track sets, reps, and weight for each session
+- **Automatic progression** — rep-based and RPE-based rules determine when to add weight
+- **Stage & phase tracking** — novice → advanced novice → intermediate → advanced, each with distinct training phases
+- **Session prescriptions** — heavy, deload, volume, max, and other session types with calculated percentages
+- **Form guides** — step-by-step technique cues and common mistakes for pull-ups and dips
+- **Workout history** — review past sessions and track progress over time
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript**
+- **Vite** for dev/build
+- **Tailwind CSS v4** for styling
+- **React Router v7** for navigation
+- **Dexie** (IndexedDB) for local-first storage — no backend required
+- **Zustand** for state management
+- **Recharts** for progress visualization
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Acknowledgement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# zlatify
+The training program implemented in this app follows **Matthew Zlat** Philosophy. For more information check out his video on weighted calisthenics: [Zlat's Weighted Calisthenics Program](https://www.youtube.com/watch?v=WGn9HyaTJwY).
