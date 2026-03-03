@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router';
-import { Home, Gym, ClockRotateRight, OpenBook, Settings } from 'iconoir-react';
+import { Home, Gym, ClockRotateRight, GraphUp, Settings } from 'iconoir-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
   { to: '/workout', icon: Gym, label: 'Train' },
   { to: '/history', icon: ClockRotateRight, label: 'Log' },
-  { to: '/form-guide', icon: OpenBook, label: 'Form' },
+  { to: '/progress', icon: GraphUp, label: 'Stats' },
   { to: '/settings', icon: Settings, label: 'Setup' },
 ];
 

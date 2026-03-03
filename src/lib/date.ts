@@ -2,6 +2,17 @@ export function todayISO(): string {
   return new Date().toISOString().split('T')[0];
 }
 
+export function getDateNMonthsAgo(months: number): string {
+  const d = new Date();
+  d.setMonth(d.getMonth() - months);
+  return d.toISOString().split('T')[0];
+}
+
+export function formatDateShort(dateStr: string): string {
+  const date = new Date(dateStr + 'T12:00:00');
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
 export function formatDate(dateStr: string): string {
   const date = new Date(dateStr + 'T12:00:00');
   return date.toLocaleDateString('en-US', {
@@ -56,11 +67,9 @@ export function getNextWorkoutDay(
   const requiresRestDay = stage === 'novice' || stage === 'advanced_novice';
 
   // Determine the last workout's day-of-week if available
-  let lastWorkoutDow: number | null = null;
   let daysSinceLastWorkout: number | null = null;
   if (lastWorkoutDate) {
     const lastDate = new Date(lastWorkoutDate + 'T12:00:00');
-    lastWorkoutDow = lastDate.getDay();
     const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const lastStart = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
     daysSinceLastWorkout = Math.round((todayStart.getTime() - lastStart.getTime()) / 86400000);

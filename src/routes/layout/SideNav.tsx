@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router';
-import { Home, Gym, ClockRotateRight, OpenBook, Settings } from 'iconoir-react';
+import { Home, Gym, ClockRotateRight, GraphUp, OpenBook, Settings } from 'iconoir-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home', shortcut: '1' },
   { to: '/workout', icon: Gym, label: 'Workout', shortcut: '2' },
   { to: '/history', icon: ClockRotateRight, label: 'History', shortcut: '3' },
-  { to: '/form-guide', icon: OpenBook, label: 'Form Guide', shortcut: '4' },
-  { to: '/settings', icon: Settings, label: 'Settings', shortcut: '5' },
+  { to: '/progress', icon: GraphUp, label: 'Progress', shortcut: '4' },
+  { to: '/form-guide', icon: OpenBook, label: 'Form Guide', shortcut: '5' },
+  { to: '/settings', icon: Settings, label: 'Settings', shortcut: '6' },
 ];
 
 export function SideNav() {

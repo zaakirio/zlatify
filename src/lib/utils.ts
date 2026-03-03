@@ -22,6 +22,11 @@ export function formatWeightSigned(kg: number): string {
   return `${prefix}${formatWeight(kg)}`;
 }
 
+export function formatVolume(kg: number): string {
+  if (kg >= 1000) return `${(kg / 1000).toFixed(1)}t`;
+  return `${Math.round(kg)}kg`;
+}
+
 export function stageDisplayName(stage: Stage): string {
   const names: Record<Stage, string> = {
     novice: 'Novice',
